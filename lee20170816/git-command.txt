@@ -1,0 +1,50 @@
+0. ssh-keygen -t rsa -C "注册邮箱" (生成ssh key)
+1. mkdir + 文件夹名 (创建一个文件夹)
+2. touch + 文件名 (创建一个文件名)
+3. vim + 文件名 (打开文件shell，i：进入编辑模式。Esc键：退出编辑后，按:。q：退出编辑，如果文件修改过，则报错，q!:强制退出编辑，如果文件内容修改过，则放弃此次修改。x：保存并退出修改)
+4. pwd 查看当前路径
+5. ls -ah 查看文件夹内所有文件
+6. git init (创建本地仓库)
+7. git status (查看本地仓库状态)
+8. git add + 文件名 (把文件添加到暂存区)
+9.1 git commit -m "descript" (提交暂存区的内容文件到当前分支，并加注释。可以是master分支，也可以是其他分支)
+9.2 git commit -a (-a是代表add，把所有的change加到git index里然后再commit)
+9.3 git commit -v (当你用－v参数的时候可以看commit的差异)
+9.4 git commit -a -v (一般提交命令)
+10. git branch (查看所有本地分支)
+11. git branch -r (查看所有远程分支)
+12. git branch -a (查看所有分支，包括本地+远程)
+13. git branch + 分支名 (创建分支)
+14. git checkout + 分支名 (切换分支)
+15. git checkout -b + 分支名 (创建并切换分支)
+16.1 git branch -D + 分支名 (删除本地分支)
+16.2 git push origin :lbj (删除远程分支lbj。一定加冒号，不加冒号就是push提交到远程仓库)
+17. git remote origin git@github.com:lbjfish/learngit.git (添加以origin命名的远程仓库)
+18. git remote (查看所有远程仓库名)
+19. git remote show origin (查看远程仓库origin里的资源 )
+20. git remote -v (查看所有远程仓库资源)
+20	git remote rm origin (删除远程仓库)
+21. git push -u origin master (推送master分支到远程仓库origin，第一次使用-u是关联分支)
+22.1 git push origin master (推送master分支到远程仓库origin)
+22.2 git push origin master:gitRep (远程仓库名 分支名：本地仓库名))
+23. git merge + abc (合并abc分支到master分支上)
+24.1 git fetch origin master (查看类似更新其他人分支或远程master分支，并不会更新自己本地，想要更新merge)
+24.2 git log -p master..origin/master (查看远程分支更改的内容)
+24.3 git merge origin/master (合并本地分支到远程分支origin/master)
+25. git pull origin master (从远程获取最新版本并merge到本地,相当于24.1+24.2+24.3)
+26. git ls-files (查看已经被提交到远程分支的文件)
+27. git reset HEAD a.txt (把a.txt的修改从暂存区中撤销，就是git add a.txt命令或执行git rm a.txt后就会存在暂存区，在git中是绿色)
+28. git checkout -- a.txt (把a.txt的修改从工作区中撤销，就是只是修改还没有执行git add a.txt命令，在git中是红色)
+29.1 git rm a.txt (适用已经commit提交到本地仓库，退回暂存区等待commit)
+29.2 git rm --cached a.txt (文件提交到暂存区删除文件，退回工作区)
+29.3 git rm -f a.txt (文件提交到暂存区直接删除文件，不退回工作区)
+29.4 rm -r + 目录 (删除目录)
+
+问题：
+	1.用git branch -r 查看所有远程分支，发现github上远程分支早都已经删除了这些无用
+分支（例如：origin/abc），但是本地用那个命令就是有分支，显示不正常，用git fetch或
+git pull强制更新都没用，就用git remote show origin去查看问题，上面提示用
+git remote prune origin命令就能保持跟远程仓库保持一样的分支，再用git branch -r就正常了。
+
+
+
