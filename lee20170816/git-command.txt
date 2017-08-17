@@ -27,6 +27,7 @@
 21. git push -u origin master (推送master分支到远程仓库origin，第一次使用-u是关联分支)
 22.1 git push origin master (推送master分支到远程仓库origin)
 22.2 git push origin master:gitRep (远程仓库名 分支名：本地仓库名))
+22.3 git push -f origin master (当本地仓库和远程仓库不一致时，而你又认为本地仓库是最新的，强制push，造成这种情况的原因是，我回退版本了git reset --hard a5f786c。一般都是远程仓库是最新的，因为我们提交前都要，git pull取最新。)
 23. git merge + abc (合并abc分支到master分支上)
 24.1 git fetch origin master (查看类似更新其他人分支或远程master分支，并不会更新自己本地，想要更新merge)
 24.2 git log -p master..origin/master (查看远程分支更改的内容)
