@@ -23,7 +23,7 @@
 18. git remote (查看所有远程仓库名)
 19. git remote show origin (查看远程仓库origin里的资源 )
 20. git remote -v (查看所有远程仓库资源)
-20	git remote rm origin (删除远程仓库)
+20  git remote rm origin (删除远程仓库)
 21. git push -u origin master (推送master分支到远程仓库origin，第一次使用-u是关联分支)
 22.1 git push origin master (推送master分支到远程仓库origin)
 22.2 git push origin master:gitRep (远程仓库名 分支名：本地仓库名))
@@ -40,6 +40,9 @@
 29.2 git rm --cached a.txt (文件提交到暂存区删除文件，退回工作区)
 29.3 git rm -f a.txt (文件提交到暂存区直接删除文件，不退回工作区)
 29.4 rm -r + 目录 (删除目录)
+30.1 git log 
+30.2 git log --pretty=oneline (格式化日志)
+30.3 git reset --hard 3628164  (版本回退)
 
 问题：
 	1.用git branch -r 查看所有远程分支，发现github上远程分支早都已经删除了这些无用
